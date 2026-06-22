@@ -2,8 +2,8 @@ extends Camera2D
 class_name CameraController
 ## 地图摄像机控制器 — 支持鼠标拖拽平移 + 滚轮缩放
 
-@export var min_zoom := 0.5
-@export var max_zoom := 3.0
+@export var min_zoom := 0.25
+@export var max_zoom := 2.0
 @export var zoom_speed := 0.1
 @export var pan_speed := 1.0
 
@@ -15,7 +15,7 @@ var _camera_start := Vector2.ZERO
 func _ready() -> void:
 	# 居中显示地图
 	position = Vector2(720, 700)
-	zoom = Vector2(1.0, 1.0)
+	zoom = Vector2(0.5, 0.5)
 
 
 func _input(event: InputEvent) -> void:

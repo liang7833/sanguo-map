@@ -28,6 +28,8 @@ var _provinces: Dictionary = {}      # province_id → {polygon, area, label, da
 var _owner_colors: Dictionary = {}
 var _province_ids: Array[String] = []
 var _data_loaded := false
+var _adjacency: Dictionary = {}       # province_id → [adjacent province_ids]
+var _adjacency_pairs: Array = []      # [ {from: Vector2, to: Vector2} ]  for drawing
 var _hovered_id := ""
 var _hover_panel: Panel = null
 var _hover_labels: Dictionary = {}   # field_name → Label
@@ -63,6 +65,7 @@ func load_all_provinces() -> void:
 		file_name = dir.get_next()
 	dir.list_dir_end()
 	_data_loaded = true
+	_compute_adjacency()
 	print("[MapRenderer] 加载完成，共 ", _province_ids.size(), " 个郡县")
 
 
@@ -74,114 +77,9 @@ func _draw() -> void:
 	if not _data_loaded:
 		return
 	
-	# 下层：郡边界 + 郡治
-	for entry in _provinces.values():
-		draw_polyline(entry.border_pts, Color.BLACK, 1.5, true)
-		draw_circle(entry.capital_pos, 8.0, Color.WHITE)
-		draw_circle(entry.capital_pos, 6.0, entry.data.fill_color.darkened(0.3))
-	
-	# 中层：辖县小圆点
-	for entry in _provinces.values():
-		for city_pos in entry.sub_city_positions:
-			draw_circle(city_pos, 4.0, Color.WHITE)
-			draw_circle(city_pos, 3.0, Color.BLACK)
-	
-	# 上层：州边界 + 州名（放在最上面，50% 透明度）
-	_draw_state_boundaries()
-
-
-# ============================================================
-# 州边界绘制
-# ============================================================
-
-## 州轮廓颜色（50% 透明度）
-const STATE_COLORS: Dictionary = {
-	"司州": Color(0.6, 0.2, 0.2, 0.5),
-	"兖州": Color(0.3, 0.5, 0.8, 0.5),
-	"豫州": Color(0.2, 0.6, 0.3, 0.5),
-	"徐州": Color(0.7, 0.5, 0.2, 0.5),
-	"青州": Color(0.2, 0.7, 0.7, 0.5),
-	"冀州": Color(0.7, 0.3, 0.5, 0.5),
-	"幽州": Color(0.5, 0.3, 0.1, 0.5),
-	"并州": Color(0.4, 0.2, 0.6, 0.5),
-	"凉州": Color(0.6, 0.5, 0.2, 0.5),
-	"雍州": Color(0.5, 0.5, 0.5, 0.5),
-	"益州": Color(0.1, 0.5, 0.4, 0.5),
-	"荆州": Color(0.8, 0.4, 0.1, 0.5),
-	"扬州": Color(0.1, 0.6, 0.8, 0.5),
-	"交州": Color(0.7, 0.2, 0.7, 0.5),
-}
-
-
-func _draw_state_boundaries() -> void:
-	# 按州分组郡
-	var state_provinces: Dictionary = {}  # state_name -> [entry]
-	for entry in _provinces.values():
-		var sn: String = entry.data.state_name
-		if not state_provinces.has(sn):
-			state_provinces[sn] = []
-		state_provinces[sn].append(entry)
-	
-	for state_name: String in state_provinces:
-		var entries: Array = state_provinces[state_name]
-		var outline_color: Color = STATE_COLORS.get(state_name, Color(0.4, 0.4, 0.4, 0.85))
-		
-		# 使用哈希计数：每条边出现次数
-		# 共享边（同州内两个郡相邻）出现 2 次，外边界出现 1 次
-		var edge_count: Dictionary = {}  # "key" -> count
-		var edge_data: Dictionary = {}  # "key" -> {from, to}
-		
-		for entry in entries:
-			var pts: PackedVector2Array = entry.border_pts
-			for i in range(pts.size()):
-				var a: Vector2 = pts[i]
-				var b: Vector2 = pts[(i + 1) % pts.size()]
-				# 规范化边：总是从"较小"坐标到"较大"坐标
-				# 注意：由于多边形顶点是网格对齐的，直接比较即可
-				var key: String
-				if a.x < b.x or (a.x == b.x and a.y < b.y):
-					key = "%.0f,%.0f-%.0f,%.0f" % [a.x, a.y, b.x, b.y]
-				else:
-					key = "%.0f,%.0f-%.0f,%.0f" % [b.x, b.y, a.x, a.y]
-				
-				edge_count[key] = edge_count.get(key, 0) + 1
-				edge_data[key] = {"from": a, "to": b}
-		
-		# 只绘制出现 1 次的边（外边界）
-		for key: String in edge_count:
-			if edge_count[key] == 1:
-				var e = edge_data[key]
-				draw_line(e["from"], e["to"], outline_color, 4.0, true)
-		
-		# 绘制州名标签
-		_draw_state_label(state_name, entries, outline_color)
-
-
-func _draw_state_label(state_name: String, entries: Array, color: Color) -> void:
-	# 计算州中心（所有郡中心的平均值）
-	var sum := Vector2.ZERO
-	var count := 0
-	for entry in entries:
-		sum += entry.data.capital_coordinates
-		count += 1
-	if count == 0:
-		return
-	var center := sum / count
-	
-	# 大号州名
-	var font := ThemeDB.get_fallback_font()
-	var font_size := 46
-	var outline_color := Color(0, 0, 0, 0.5)
-	var text := state_name
-	var pos := center - Vector2(0, font_size * 0.5)
-	
-	# 描边
-	draw_string(font, pos + Vector2(2, 0), text, HORIZONTAL_ALIGNMENT_CENTER, -1, font_size, outline_color)
-	draw_string(font, pos + Vector2(-2, 0), text, HORIZONTAL_ALIGNMENT_CENTER, -1, font_size, outline_color)
-	draw_string(font, pos + Vector2(0, 2), text, HORIZONTAL_ALIGNMENT_CENTER, -1, font_size, outline_color)
-	draw_string(font, pos + Vector2(0, -2), text, HORIZONTAL_ALIGNMENT_CENTER, -1, font_size, outline_color)
-	# 主文字
-	draw_string(font, pos, text, HORIZONTAL_ALIGNMENT_CENTER, -1, font_size, color)
+	# 下层：接壤郡治连线
+	for pair in _adjacency_pairs:
+		draw_line(pair.from, pair.to, Color(0.6, 0.5, 0.4, 0.45), 0.75, true)
 
 
 # ============================================================
@@ -194,21 +92,12 @@ func _create_province_nodes(data: Resource) -> void:
 		polygon_points = _generate_default_polygon(data.capital_coordinates, data.map_size)
 		data.province_polygon = polygon_points
 
-	# 计算多边形中心（用于标签定位）
-	var center := _polygon_center(polygon_points)
-
-	# 生成下属城市坐标
-	var sub_city_positions: Array[Vector2] = []
-	var sub_count: int = data.sub_cities.size()
-	if sub_count > 0:
-		sub_city_positions = _generate_sub_city_positions(data.capital_coordinates, polygon_points, sub_count)
-
 	# === Polygon2D 填充 ===
 	var polygon := Polygon2D.new()
 	polygon.name = data.province_id
 	polygon.polygon = polygon_points
 	polygon.color = data.fill_color
-	polygon.modulate = Color(1, 1, 1, 0.75)
+	polygon.modulate = Color(1, 1, 1, 0.0)  # 透明：不显示填充色
 	add_child(polygon)
 
 	# === Area2D 交互 — 三角剖分法，三角向外微扩防间隙 ===
@@ -250,40 +139,27 @@ func _create_province_nodes(data: Resource) -> void:
 	area.input_event.connect(_on_province_input_event.bind(data.province_id))
 	add_child(area)
 
-	# === Label 郡名（中层，字体中） ===
+	# === Label 郡治名 ===
 	var label := Label.new()
 	label.name = data.province_id + "_label"
-	label.text = data.province_name
-	label.position = center - Vector2(60, 14)
-	label.size = Vector2(120, 28)
+	label.text = data.capital_city
+	# 文字居中于圆点
+	label.size = Vector2(0, 0)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	label.add_theme_font_size_override("font_size", 20)
+	label.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	label.grow_vertical = Control.GROW_DIRECTION_BOTH
+	label.position = data.capital_coordinates - label.size * 0.5
+	# 延迟一帧设置（需要等 label 计算 intrinsic size）
+	label.ready.connect(func():
+		label.position = data.capital_coordinates - label.size * 0.5
+	, CONNECT_ONE_SHOT)
+	label.add_theme_font_size_override("font_size", 10)
 	label.add_theme_color_override("font_color", Color.WHITE)
 	label.add_theme_color_override("font_outline_color", Color.BLACK)
-	label.add_theme_constant_override("outline_size", 2)
+	label.add_theme_constant_override("outline_size", 1)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(label)
-
-	# === 辖县标签（上层，字体小） ===
-	var sub_city_labels: Array[Label] = []
-	for idx in range(sub_city_positions.size()):
-		var city_name: String = data.sub_cities[idx] if idx < data.sub_cities.size() else ""
-		var city_label := Label.new()
-		city_label.name = data.province_id + "_city_" + str(idx)
-		city_label.text = city_name
-		# 标签放在小圆点右上方
-		city_label.position = sub_city_positions[idx] + Vector2(6, -12)
-		city_label.size = Vector2(72, 14)
-		city_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
-		city_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-		city_label.add_theme_font_size_override("font_size", 11)
-		city_label.add_theme_color_override("font_color", Color(0.85, 0.85, 0.85))
-		city_label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.7))
-		city_label.add_theme_constant_override("outline_size", 1)
-		city_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		add_child(city_label)
-		sub_city_labels.append(city_label)
 
 	# 存储
 	_provinces[data.province_id] = {
@@ -293,8 +169,6 @@ func _create_province_nodes(data: Resource) -> void:
 		"data": data,
 		"border_pts": polygon_points,
 		"capital_pos": data.capital_coordinates,
-		"sub_city_positions": sub_city_positions,
-		"sub_city_labels": sub_city_labels,
 	}
 
 	_owner_colors[data.province_id] = data.fill_color
@@ -411,7 +285,7 @@ func update_province_owner(province_id: String, faction_color: Color) -> void:
 func highlight_province(province_id: String, highlight: bool) -> void:
 	var entry = _provinces.get(province_id)
 	if entry:
-		entry.polygon.modulate = Color(1.4, 1.4, 1.4, 0.9) if highlight else Color(1, 1, 1, 0.75)
+		entry.polygon.modulate = Color(1, 1, 1, 0.25) if highlight else Color(1, 1, 1, 0.0)
 
 func batch_update_owners(owner_map: Dictionary) -> void:
 	for pid: String in owner_map:
@@ -497,6 +371,75 @@ func _process(_delta: float) -> void:
 
 
 # ============================================================
+# 邻接关系计算
+# ============================================================
+
+## 通过共享边判断两郡是否接壤
+## 多边形顶点为网格对齐的整数坐标，共享边归一化为字符串后匹配
+func _compute_adjacency() -> void:
+	# edge_key → [province_id, ...]
+	var edge_map: Dictionary = {}
+	
+	for pid in _province_ids:
+		var entry = _provinces[pid]
+		var pts: PackedVector2Array = entry.border_pts
+		for i in range(pts.size()):
+			var a: Vector2 = pts[i]
+			var b: Vector2 = pts[(i + 1) % pts.size()]
+			# 归一化：总是从"较小"坐标到"较大"坐标
+			var key: String
+			if a.x < b.x or (a.x == b.x and a.y < b.y):
+				key = "%d,%d-%d,%d" % [int(a.x), int(a.y), int(b.x), int(b.y)]
+			else:
+				key = "%d,%d-%d,%d" % [int(b.x), int(b.y), int(a.x), int(a.y)]
+			
+			if not edge_map.has(key):
+				edge_map[key] = []
+			# 避免同一个郡的同一条边重复添加
+			if edge_map[key].size() == 0 or edge_map[key].back() != pid:
+				edge_map[key].append(pid)
+	
+	# 找出共享边（恰好 2 个郡共享）= 接壤
+	_adjacency_pairs.clear()
+	for pid in _province_ids:
+		_adjacency[pid] = []
+	
+	for key in edge_map:
+		var pids: Array = edge_map[key]
+		if pids.size() == 2:
+			var a: String = pids[0]
+			var b: String = pids[1]
+			_adjacency[a].append(b)
+			_adjacency[b].append(a)
+		elif pids.size() > 2:
+			# 多郡共点或共边，两两之间也算接壤
+			for i in range(pids.size()):
+				for j in range(i + 1, pids.size()):
+					var a: String = pids[i]
+					var b: String = pids[j]
+					_adjacency[a].append(b)
+					_adjacency[b].append(a)
+	
+	# 去重并生成画线用的 pair 列表
+	var drawn: Dictionary = {}
+	for pid in _province_ids:
+		var cap_a: Vector2 = _provinces[pid].capital_pos
+		for neighbor in _adjacency[pid]:
+			# 用排序后的 key 确保每对只画一次
+			var pair_key: String
+			if pid < neighbor:
+				pair_key = pid + "||" + neighbor
+			else:
+				pair_key = neighbor + "||" + pid
+			if not drawn.has(pair_key):
+				drawn[pair_key] = true
+				var cap_b: Vector2 = _provinces[neighbor].capital_pos
+				_adjacency_pairs.append({"from": cap_a, "to": cap_b})
+	
+	print("[MapRenderer] 邻接关系：", _adjacency_pairs.size(), " 条连线")
+
+
+# ============================================================
 # 几何工具
 # ============================================================
 
@@ -528,72 +471,3 @@ func _polygon_center(pts: PackedVector2Array) -> Vector2:
 	for p in pts:
 		sum += p
 	return sum / pts.size()
-
-func _generate_sub_city_positions(capital: Vector2, polygon: PackedVector2Array, count: int) -> Array[Vector2]:
-	if polygon.size() < 3:
-		return []
-	
-	# 计算多边形的包围盒
-	var min_x := polygon[0].x
-	var max_x := polygon[0].x
-	var min_y := polygon[0].y
-	var max_y := polygon[0].y
-	for p in polygon:
-		min_x = minf(min_x, p.x)
-		max_x = maxf(max_x, p.x)
-		min_y = minf(min_y, p.y)
-		max_y = maxf(max_y, p.y)
-	
-	var center := _polygon_center(polygon)
-	var rx := (max_x - min_x) * 0.35
-	var ry := (max_y - min_y) * 0.35
-	
-	# 确保治所在多边形内；若不在，用中心代替
-	var origin := capital if _point_in_polygon(capital, polygon) else center
-	
-	var positions: Array[Vector2] = []
-	var seed_base: float = abs(origin.x * 137.0 + origin.y * 251.0)
-	
-	for i in count:
-		# 用确定的抖动替代 randf_range，确保同一郡每次位置一致
-		var angle_noise := sin(seed_base + i * 1.7) * 0.25
-		var radius_scale: float = 0.6 + 0.4 * abs(sin(seed_base * 3.3 + i * 2.1))
-		
-		# 多次尝试：从大半径逐渐缩小，直到落在多边形内
-		var found := false
-		var r_factor := radius_scale
-		while r_factor > 0.15:
-			var angle := TAU * i / count + angle_noise
-			var candidate := Vector2(
-				origin.x + rx * r_factor * cos(angle),
-				origin.y + ry * r_factor * sin(angle)
-			)
-			if _point_in_polygon(candidate, polygon):
-				positions.append(candidate)
-				found = true
-				break
-			r_factor -= 0.08
-		
-		if not found:
-			# 兜底：放在多边形中心与治所之间
-			var fallback := (origin + center) * 0.5
-			positions.append(fallback)
-	
-	return positions
-
-
-func _point_in_polygon(point: Vector2, poly: PackedVector2Array) -> bool:
-	# 射线法判断点是否在多边形内
-	if poly.size() < 3:
-		return false
-	var inside := false
-	var n := poly.size()
-	var j := n - 1
-	for i in range(n):
-		var pi := poly[i]
-		var pj := poly[j]
-		if ((pi.y > point.y) != (pj.y > point.y)) and \
-		   (point.x < (pj.x - pi.x) * (point.y - pi.y) / (pj.y - pi.y) + pi.x):
-			inside = not inside
-		j = i
-	return inside
