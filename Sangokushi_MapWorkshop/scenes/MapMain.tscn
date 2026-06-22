@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://mapmain001"]
+
+[ext_resource type="Script" path="res://scripts/map/MapRenderer.gd" id="1_renderer"]
+[ext_resource type="Script" path="res://scripts/map/CameraController.gd" id="2_camera"]
+
+[node name="MapMain" type="Node2D"]
+
+[node name="WorldMap" type="Node2D" parent="."]
+script = ExtResource("1_renderer")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_camera")
+current = true

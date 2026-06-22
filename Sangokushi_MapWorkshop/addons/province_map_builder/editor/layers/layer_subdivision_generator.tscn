@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://ca768gid46im3"]
+
+[ext_resource type="Script" uid="uid://c0nc7370icrst" path="res://addons/province_map_builder/editor/layers/layer_subdivision_generator.gd" id="1_4otcq"]
+[ext_resource type="Script" uid="uid://ciracn35b1pt4" path="res://addons/province_map_builder/editor/province_map_display.gd" id="1_280si"]
+[ext_resource type="Script" uid="uid://2yn2ud6hjvbm" path="res://addons/province_map_builder/editor/layers/generator_preview_display.gd" id="2_u0ftt"]
+
+[node name="LayerSubdivisionGenerator" type="Window" unique_id=138365281 node_paths=PackedStringArray("display", "points_spinbox", "relaxation_spinbox", "seed_spinbox", "randomize_button", "generate_button", "apply_button", "info_label", "cell_opacity_slider")]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(1000, 600)
+min_size = Vector2i(600, 400)
+script = ExtResource("1_4otcq")
+display = NodePath("PanelContainer/HSplitContainer/GeneratorPreviewDisplay")
+points_spinbox = NodePath("PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Points/SpinBox")
+relaxation_spinbox = NodePath("PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Relaxation/SpinBox")
+seed_spinbox = NodePath("PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Seed/SpinBox")
+randomize_button = NodePath("PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/SeedButton")
+generate_button = NodePath("PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/GenerateButton")
+apply_button = NodePath("PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/ApplyButton")
+info_label = NodePath("PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/InfoLabel")
+cell_opacity_slider = NodePath("PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/OpacitySlider")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1234584567]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer" unique_id=1393503116]
+layout_mode = 2
+split_offsets = PackedInt32Array(300)
+split_offset = 300
+
+[node name="SideButtons" type="PanelContainer" parent="PanelContainer/HSplitContainer" unique_id=1967952854]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HSplitContainer/SideButtons" unique_id=1924922922]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VB" type="VBoxContainer" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer" unique_id=499216137]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=2089162670]
+visible = false
+layout_mode = 2
+text = "Info"
+
+[node name="Points" type="HSplitContainer" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=2001841649]
+layout_mode = 2
+tooltip_text = "Number of random points to generate"
+dragging_enabled = false
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Points" unique_id=1511958762]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Points"
+
+[node name="SpinBox" type="SpinBox" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Points" unique_id=477701454]
+layout_mode = 2
+size_flags_horizontal = 8
+min_value = 1.0
+max_value = 1000.0
+value = 20.0
+
+[node name="Relaxation" type="HSplitContainer" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=1622278588]
+layout_mode = 2
+tooltip_text = "Uses Lloyds relaxation to spread the points more evenly"
+dragging_enabled = false
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Relaxation" unique_id=1565968325]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Relaxation"
+
+[node name="SpinBox" type="SpinBox" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Relaxation" unique_id=1230071151]
+layout_mode = 2
+size_flags_horizontal = 8
+max_value = 10.0
+value = 3.0
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=83487086]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Seed" type="HSplitContainer" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=969865971]
+layout_mode = 2
+tooltip_text = "Seed to generate the random points from"
+dragging_enabled = false
+dragger_visibility = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Seed" unique_id=769818331]
+custom_minimum_size = Vector2(99.08, 0)
+layout_mode = 2
+text = "Seed"
+
+[node name="SpinBox" type="SpinBox" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB/Seed" unique_id=216992626]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 9.223372e+18
+
+[node name="SeedButton" type="Button" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=2101770659]
+layout_mode = 2
+text = "Randomize seed 🎲"
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=1440862913]
+visible = false
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=382792115]
+visible = false
+layout_mode = 2
+text = "Opacity"
+
+[node name="OpacitySlider" type="HSlider" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=2081738170]
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=805163114]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="GenerateButton" type="Button" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=192237396]
+visible = false
+layout_mode = 2
+text = "Generate"
+
+[node name="ApplyButton" type="Button" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer/VB" unique_id=1442900975]
+layout_mode = 2
+text = "Apply"
+
+[node name="CancelButton" type="Button" parent="PanelContainer/HSplitContainer/SideButtons/MarginContainer" unique_id=1729909433]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+text = "Cancel"
+
+[node name="GeneratorPreviewDisplay" type="Control" parent="PanelContainer/HSplitContainer" unique_id=2075581272]
+layout_mode = 2
+script = ExtResource("2_u0ftt")
+metadata/_custom_type_script = "uid://2yn2ud6hjvbm"
+
+[node name="ProvinceMapDisplay" type="Control" parent="PanelContainer/HSplitContainer" unique_id=637374382]
+visible = false
+layout_mode = 2
+script = ExtResource("1_280si")
+metadata/_custom_type_script = "uid://ciracn35b1pt4"
+
+[node name="BottomButtons" type="HBoxContainer" parent="PanelContainer" unique_id=273523466]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8

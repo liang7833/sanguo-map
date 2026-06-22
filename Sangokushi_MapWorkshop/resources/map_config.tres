@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MapConfig" load_steps=2 format=3 uid="uid://mapconfig001"]
+
+[ext_resource type="Script" path="res://scripts/map/ProvinceData.gd" id="1_schema"]
+
+[resource]
+# 地图渲染配置
+# 在 Province Map Builder 编辑器中通过 Inspector 面板调整具体参数
+script = null

@@ -1,0 +1,1778 @@
+[
+  {
+    "id": "yuyang",
+    "name": "渔阳郡",
+    "state": "幽州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "liaoxi",
+    "name": "辽西郡",
+    "state": "幽州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "youbeiping",
+    "name": "右北平郡",
+    "state": "幽州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "zhuo",
+    "name": "范阳郡",
+    "state": "幽州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "dai",
+    "name": "代郡",
+    "state": "幽州",
+    "faction": "鲜卑",
+    "color": [
+      0.6,
+      0.45,
+      0.35,
+      1.0
+    ]
+  },
+  {
+    "id": "shanggu",
+    "name": "上谷郡",
+    "state": "幽州",
+    "faction": "鲜卑",
+    "color": [
+      0.6,
+      0.45,
+      0.35,
+      1.0
+    ]
+  },
+  {
+    "id": "yanguo",
+    "name": "燕国",
+    "state": "幽州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "liaodong",
+    "name": "辽东郡",
+    "state": "幽州",
+    "faction": "公孙度",
+    "color": [
+      0.5,
+      0.3,
+      0.6,
+      1.0
+    ]
+  },
+  {
+    "id": "daifang",
+    "name": "带方郡",
+    "state": "幽州",
+    "faction": "公孙度",
+    "color": [
+      0.5,
+      0.3,
+      0.6,
+      1.0
+    ]
+  },
+  {
+    "id": "lelang",
+    "name": "乐浪郡",
+    "state": "幽州",
+    "faction": "公孙度",
+    "color": [
+      0.5,
+      0.3,
+      0.6,
+      1.0
+    ]
+  },
+  {
+    "id": "xuantu",
+    "name": "玄菟郡",
+    "state": "幽州",
+    "faction": "公孙度",
+    "color": [
+      0.5,
+      0.3,
+      0.6,
+      1.0
+    ]
+  },
+  {
+    "id": "changli",
+    "name": "昌黎郡",
+    "state": "幽州",
+    "faction": "公孙度",
+    "color": [
+      0.5,
+      0.3,
+      0.6,
+      1.0
+    ]
+  },
+  {
+    "id": "taiyuan",
+    "name": "太原郡",
+    "state": "并州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "shangdang",
+    "name": "上党郡",
+    "state": "并州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "yanmen",
+    "name": "雁门郡",
+    "state": "并州",
+    "faction": "鲜卑",
+    "color": [
+      0.6,
+      0.45,
+      0.35,
+      1.0
+    ]
+  },
+  {
+    "id": "xihe",
+    "name": "西河郡",
+    "state": "并州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "xinxing",
+    "name": "新兴郡",
+    "state": "并州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "leping",
+    "name": "乐平郡",
+    "state": "并州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "pingyang",
+    "name": "平阳郡",
+    "state": "司州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "yecheng",
+    "name": "魏郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "changshan",
+    "name": "常山郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "julu",
+    "name": "巨鹿郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "bohai",
+    "name": "渤海郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "anping",
+    "name": "安平郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "hejian",
+    "name": "河间郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "zhongshan",
+    "name": "中山国",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "qinghe",
+    "name": "清河郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "zhaoguo",
+    "name": "赵国",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "guangping",
+    "name": "广平郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "yangping",
+    "name": "阳平郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "pingyuan",
+    "name": "平原郡",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "leling",
+    "name": "乐陵国",
+    "state": "冀州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "beihai",
+    "name": "北海国",
+    "state": "青州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "donglai",
+    "name": "东莱郡",
+    "state": "青州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "jinan",
+    "name": "济南国",
+    "state": "青州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "lean",
+    "name": "乐安郡",
+    "state": "青州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "chengyang",
+    "name": "城阳郡",
+    "state": "青州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "qiguo",
+    "name": "齐国",
+    "state": "青州",
+    "faction": "袁绍",
+    "color": [
+      0.85,
+      0.55,
+      0.1,
+      1.0
+    ]
+  },
+  {
+    "id": "chenliu",
+    "name": "陈留国",
+    "state": "兖州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "dongjun",
+    "name": "东郡",
+    "state": "兖州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "dongping",
+    "name": "东平国",
+    "state": "兖州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "jibei",
+    "name": "济北国",
+    "state": "兖州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "jiyin",
+    "name": "济阴郡",
+    "state": "兖州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "shanyang",
+    "name": "山阳郡",
+    "state": "兖州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "rencheng",
+    "name": "任城郡",
+    "state": "兖州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "taishan",
+    "name": "泰山郡",
+    "state": "兖州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "yingchuan",
+    "name": "颍川郡",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "runan",
+    "name": "汝南郡",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "chenjun",
+    "name": "陈郡",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "qiaojun",
+    "name": "谯郡",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "peiguo",
+    "name": "沛国",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "liangguo",
+    "name": "梁国",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "lujun",
+    "name": "鲁郡",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "yiyang",
+    "name": "弋阳郡",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "anfeng",
+    "name": "安丰郡",
+    "state": "豫州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "pengcheng",
+    "name": "彭城国",
+    "state": "徐州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "xiapi",
+    "name": "下邳郡",
+    "state": "徐州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "guangling",
+    "name": "广陵郡",
+    "state": "徐州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "donghai",
+    "name": "东海国",
+    "state": "徐州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "dongguan",
+    "name": "东莞郡",
+    "state": "徐州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "langya",
+    "name": "琅邪国",
+    "state": "徐州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "luoyang",
+    "name": "河南尹",
+    "state": "司州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "hedong",
+    "name": "河东郡",
+    "state": "司州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "henei",
+    "name": "河内郡",
+    "state": "司州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "hongnong",
+    "name": "弘农郡",
+    "state": "司州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "changan",
+    "name": "京兆郡",
+    "state": "雍州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "fengyi",
+    "name": "冯翊郡",
+    "state": "雍州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "fufeng",
+    "name": "扶风郡",
+    "state": "雍州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "beidi",
+    "name": "北地郡",
+    "state": "雍州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "anding",
+    "name": "安定郡",
+    "state": "雍州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "xinping",
+    "name": "新平郡",
+    "state": "雍州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "guangwei",
+    "name": "广魏郡",
+    "state": "雍州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "fuyi",
+    "name": "抚夷护军",
+    "state": "雍州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "jincheng",
+    "name": "金城郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "tianshui",
+    "name": "天水郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "wudu",
+    "name": "武都郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "dunhuang",
+    "name": "敦煌郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "jiuquan",
+    "name": "酒泉郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "zhangye",
+    "name": "张掖郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "wuwei",
+    "name": "武威郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "xihai",
+    "name": "西海郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "xiping",
+    "name": "西平郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "longxi",
+    "name": "陇西郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "nanan",
+    "name": "南安郡",
+    "state": "凉州",
+    "faction": "马腾",
+    "color": [
+      0.7,
+      0.55,
+      0.2,
+      1.0
+    ]
+  },
+  {
+    "id": "nanyang",
+    "name": "南阳郡",
+    "state": "荆州",
+    "faction": "曹操",
+    "color": [
+      0.2,
+      0.35,
+      0.8,
+      1.0
+    ]
+  },
+  {
+    "id": "xiangyang",
+    "name": "襄阳郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "nanxiang",
+    "name": "南乡郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "xincheng",
+    "name": "新城郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "shangyong",
+    "name": "上庸郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "weixing",
+    "name": "魏兴郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "jiangling",
+    "name": "南郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "changsha",
+    "name": "长沙郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "wuling",
+    "name": "武陵郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "lingling",
+    "name": "零陵郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "guiyang",
+    "name": "桂阳郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "hengyang",
+    "name": "衡阳郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "xiangdong",
+    "name": "湘东郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "linhe",
+    "name": "临贺郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "yidu",
+    "name": "宜都郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "jianping",
+    "name": "建平郡",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "jianye",
+    "name": "丹阳郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "wujun",
+    "name": "吴郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "kuaiji",
+    "name": "会稽郡",
+    "state": "扬州",
+    "faction": "刘繇",
+    "color": [
+      0.55,
+      0.65,
+      0.75,
+      1.0
+    ]
+  },
+  {
+    "id": "yuzhang",
+    "name": "豫章郡",
+    "state": "扬州",
+    "faction": "刘繇",
+    "color": [
+      0.55,
+      0.65,
+      0.75,
+      1.0
+    ]
+  },
+  {
+    "id": "luling",
+    "name": "庐陵郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "poyang",
+    "name": "鄱阳郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "xindu",
+    "name": "新都郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "linchuan",
+    "name": "临川郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "jianan",
+    "name": "建安郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "linhai",
+    "name": "临海郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "qichun",
+    "name": "蕲春郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "huainan",
+    "name": "淮南郡",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "piling",
+    "name": "毗陵典农校尉",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "jiangbei",
+    "name": "江北弃地",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "chengdu",
+    "name": "蜀郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "hanzhong",
+    "name": "汉中郡",
+    "state": "益州",
+    "faction": "张鲁",
+    "color": [
+      0.75,
+      0.75,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "ba",
+    "name": "巴郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "badong",
+    "name": "巴东郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "baxi",
+    "name": "巴西郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "jianning",
+    "name": "建宁郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "zitong",
+    "name": "梓潼郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "yinping",
+    "name": "阴平郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "wenshan",
+    "name": "汶山郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "guanghan",
+    "name": "广汉郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "dguanghan",
+    "name": "东广汉郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "jianwei",
+    "name": "犍为郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "hanjia",
+    "name": "汉嘉郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "yuexi",
+    "name": "越巂郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "yunnan",
+    "name": "云南郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "zhuti",
+    "name": "朱提郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "zangke",
+    "name": "牂牁郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "xinggu",
+    "name": "兴古郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "yongchang",
+    "name": "永昌郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "fuling",
+    "name": "涪陵郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "jiangyang",
+    "name": "江阳郡",
+    "state": "益州",
+    "faction": "刘璋",
+    "color": [
+      0.15,
+      0.7,
+      0.3,
+      1.0
+    ]
+  },
+  {
+    "id": "nanhai",
+    "name": "南海郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "jiaozhi",
+    "name": "交趾郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "cangwu",
+    "name": "苍梧郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "hepu",
+    "name": "合浦郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "yulin",
+    "name": "郁林郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "gaoliang",
+    "name": "高凉郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "zhuya",
+    "name": "朱崖郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "jiuzhen",
+    "name": "九真郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "rinan",
+    "name": "日南郡",
+    "state": "交州",
+    "faction": "士燮",
+    "color": [
+      0.7,
+      0.2,
+      0.7,
+      1.0
+    ]
+  },
+  {
+    "id": "lujiang_wei",
+    "name": "庐江郡(曹魏)",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "lujiang_wu",
+    "name": "庐江郡(东吴)",
+    "state": "扬州",
+    "faction": "孙策",
+    "color": [
+      0.85,
+      0.15,
+      0.15,
+      1.0
+    ]
+  },
+  {
+    "id": "jiangxia_wei",
+    "name": "江夏郡(曹魏)",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  },
+  {
+    "id": "jiangxia_wu",
+    "name": "江夏郡(东吴)",
+    "state": "荆州",
+    "faction": "刘表",
+    "color": [
+      0.15,
+      0.65,
+      0.65,
+      1.0
+    ]
+  }
+]

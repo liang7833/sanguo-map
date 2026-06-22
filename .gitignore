@@ -1,0 +1,17 @@
+# Godot 4 editor data
+.godot/
+
+# Godot export / build output
+export/
+*.pck
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+.env

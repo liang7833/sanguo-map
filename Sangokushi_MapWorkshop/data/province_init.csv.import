@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cupinxq2mw1kb"
+
+[deps]
+
+files=["res://data/province_init.province.translation", "res://data/province_init.state.translation", "res://data/province_init.capital.translation", "res://data/province_init.agriculture.translation", "res://data/province_init.commerce.translation", "res://data/province_init.population.translation", "res://data/province_init.loyalty.translation", "res://data/province_init.defense.translation", "res://data/province_init.faction.translation", "res://data/province_init.prefect.translation", "res://data/province_init.sub.translation"]
+
+source_file="res://data/province_init.csv"
+dest_files=["res://data/province_init.province.translation", "res://data/province_init.state.translation", "res://data/province_init.capital.translation", "res://data/province_init.agriculture.translation", "res://data/province_init.commerce.translation", "res://data/province_init.population.translation", "res://data/province_init.loyalty.translation", "res://data/province_init.defense.translation", "res://data/province_init.faction.translation", "res://data/province_init.prefect.translation", "res://data/province_init.sub.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

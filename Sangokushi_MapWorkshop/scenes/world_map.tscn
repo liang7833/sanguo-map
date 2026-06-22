@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b0bs2qumxwetx"]
+
+[ext_resource type="Script" uid="uid://2tqm4uwyt512" path="res://addons/province_map_builder/province_map_2d.gd" id="1_oru6e"]
+
+[node name="WorldMap" type="Node2D" unique_id=1072455690]
+script = ExtResource("1_oru6e")
